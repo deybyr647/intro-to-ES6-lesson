@@ -2,6 +2,8 @@
 
 // Function Declaration
 function introduce(name, age, location) {
+
+  // String interpolation with addition operator
   let nameStr = "Hi, my name is " + name + ". ";
   let ageStr = "I'm " + age + " years old";
   let locationStr = " and I'm from " + location + ".";
@@ -95,3 +97,55 @@ function getStudents() {
 }
 
 getStudents(); // Fetches the students from the API and prints them to the console
+
+
+
+/* Creating objects using Factory Functions & Prototypes */
+
+/*
+This was not covered in the ASC Summer Intensive
+but is the basis for ES6 classes, or simply,
+classes in JavaScript.
+
+
+Classes & the class keyword are just syntactic sugar
+over the use of factory functions and prototypes.
+In other words, they make working with objects
+easier.
+
+Consider researching the following topics:
+JavaScript Factory Functions
+JavaScript Prototypes
+JavaScript Classes vs Factory Functions
+Prototypical Inheritance
+*/
+
+//Creating a Student "class" with a factory function & prototypes
+
+function Student(name, age, cohort, hasGlasses) {
+  this.name = name;
+  this.age = age;
+  this.cohort = cohort;
+  this.hasGlasses = hasGlasses;
+
+  this.introduce = function () { 
+    return "Hi, my name is " + this.name + " and I'm a " + this.cohort + " cohort student.";
+  }
+}
+
+// Creating new instance of the Student "class"
+let student1 = new Student("Kenneth", 17, "MLB-HTML", false);
+
+//Adding a method to the prototype (class)
+Student.prototype.setAge = function (n) { 
+  this.age = n;
+}
+
+console.log(student1.introduce()); // Hi, my name is Kenneth and I'm a MLB-HTML cohort student.
+student1.setAge(18); // Sets the age of the student to 18
+
+// Print out student properties
+console.log(student1.name); // Kenneth
+console.log(student1.age); // 18
+console.log(student1.cohort); // MLB-HTML
+console.log(student1.hasGlasses); // false
