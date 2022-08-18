@@ -2,7 +2,6 @@
 
 // Function Declaration
 function introduce(name, age, location) {
-
   // String interpolation with addition operator
   let nameStr = "Hi, my name is " + name + ". ";
   let ageStr = "I'm " + age + " years old";
@@ -98,8 +97,6 @@ function getStudents() {
 
 getStudents(); // Fetches the students from the API and prints them to the console
 
-
-
 /* Creating objects using Factory Functions & Prototypes */
 
 /*
@@ -128,18 +125,24 @@ function Student(name, age, cohort, hasGlasses) {
   this.cohort = cohort;
   this.hasGlasses = hasGlasses;
 
-  this.introduce = function () { 
-    return "Hi, my name is " + this.name + " and I'm a " + this.cohort + " cohort student.";
-  }
+  this.introduce = function () {
+    return (
+      "Hi, my name is " +
+      this.name +
+      " and I'm a " +
+      this.cohort +
+      " cohort student."
+    );
+  };
 }
 
 // Creating new instance of the Student "class"
 let student1 = new Student("Kenneth", 17, "MLB-HTML", false);
 
 //Adding a method to the prototype (class)
-Student.prototype.setAge = function (n) { 
+Student.prototype.setAge = function (n) {
   this.age = n;
-}
+};
 
 console.log(student1.introduce()); // Hi, my name is Kenneth and I'm a MLB-HTML cohort student.
 student1.setAge(18); // Sets the age of the student to 18

@@ -1,3 +1,5 @@
+/*Final Source Code*/
+
 /* Review of Already Learned ES6 Stuff */
 
 //Variables
@@ -20,10 +22,6 @@ this is useful for keeping variables private to only where they are needed/used
 such as a function or an if statement
 */
 
-
-
-
-
 //Class Declarations/Syntax
 
 class Student {
@@ -38,7 +36,7 @@ class Student {
     return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
   }
 
-  setCohort(cohort) { 
+  setCohort(cohort) {
     this.cohort = cohort;
   }
 
@@ -62,12 +60,7 @@ console.log(student1.name); // "Uday Manneru"
 console.log(student1.age); // 16
 console.log(student1.hasGlasses); // true
 
-
-
-
-
 /* New ES6 Concepts */
-
 
 /* Arrow Functions */
 
@@ -82,10 +75,6 @@ const abdel = introduce("Abdelmonem Khedr", 22, "Egypt"); // Hi, my name is Abde
 //Arrow Function Shorthand
 let exponent = (num, exp) => num ** exp;
 const fourSquared = exponent(4, 2); // 16
-
-
-
-
 
 /* Objects & Property Access with Destructuring */
 
@@ -109,18 +98,14 @@ let kenneth = {
   },
 };
 
-
-
 // Object Destructuring & Property Access
 const { personLocation, age, role } = kenneth;
 console.log(personLocation, age, role); // New York 17 Teaching Fellow at All Star Code
-
 
 // Array Destructuring & Element Access
 const coordinates = [75, -40, 33];
 const [latitude, longitude, altitude] = coordinates;
 console.log(latitude, longitude, altitude); // 75 -40 33
-
 
 /* Rest/Spread Operator with Objects */
 const abdelObject = {
@@ -136,17 +121,12 @@ const abdelObjectUpdated = {
   hasGlasses: true,
 };
 
-
 //Combining Arrays with the Spread Operator
 const numsArrayOne = [1, 2, 3, 4, 5];
 const numsArrayTwo = [6, 7, 8, 9];
 
 const combinedArray = [...numsArrayOne, ...numsArrayTwo];
 console.log(combinedArray); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-
-
-
 
 /* Arrays */
 
@@ -157,11 +137,9 @@ const numbers = [3, 4, 5, 6, 7, 8, 9];
 const evenNumbers = numbers.filter((num) => num % 2 === 0);
 console.log(evenNumbers); // [ 4, 6, 8 ]
 
-
 // New Array that has the numbers squared
 const squaredNumbers = numbers.map((num) => num ** 2);
 console.log(squaredNumbers); // [ 9, 16, 25, 36, 49, 64, 81 ]
-
 
 // .map(), & .filter() chaining, for getting the even squared numbers
 let squaredEvenNumbers = numbers
@@ -170,17 +148,11 @@ let squaredEvenNumbers = numbers
 
 console.log(squaredEvenNumbers); // [16, 36, 64]
 
-
 // Printing info of squared numbers
 squaredEvenNumbers.forEach((number, index) => {
   let elementInfo = `The number at index ${index} is ${number}`;
   console.log(elementInfo);
 });
-
-
-
-
-
 
 /* Fetch with async/await */
 
@@ -188,7 +160,6 @@ squaredEvenNumbers.forEach((number, index) => {
 const getStudents = async () => {
   const proxy = "https://nextjs-cors-anywhere.vercel.app/api?endpoint=";
   const api = "https://mlb-md-firebase-demo.vercel.app/api/students";
-
 
   const response = await fetch(proxy + api); // "await" waits for the fetch response to come back
   const data = await response.json(); // "await" waits for the response data to be parsed as JSON
